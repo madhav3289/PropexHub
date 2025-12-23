@@ -1,7 +1,10 @@
 import express from "express";
 import mongoose from "mongoose";
+import dotenv from "dotenv";
 
-mongoose.connect("mongodb+srv://madhav3289:Lt3a4jFXqrt3289@mern-estate.ibdcdcv.mongodb.net/?appName=mern-estate").then(() => {
+dotenv.config();
+
+mongoose.connect(process.env.MONGO).then(() => {
     console.log('Connected to MongoDB');
 }).catch((err) => {
     console.error('Failed to connect to MongoDB:', err);
